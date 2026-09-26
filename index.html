@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>小精靈 · Fey</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header class="hud">
+    <div>1UP <span id="score">00</span></div>
+    <div>HIGH SCORE <span id="highScore">00</span></div>
+    <div>♥ <span id="lives">2</span></div>
+  </header>
+  <section class="cabinet">
+    <canvas id="game" width="448" height="576" aria-label="小精靈遊戲"></canvas>
+    <div id="startScreen" class="overlay">
+      <div id="readyText" class="pixel-title">READY!</div>
+      <button id="startButton" class="start">開始</button>
+      <p>方向鍵 / WASD</p>
+      <p id="easterHint" class="hint">開始畫面輸入 Google（不分大小寫）切換紀念地圖；再輸入一次解除</p>
+    </div>
+    <div id="gameOver" class="overlay hidden">
+      <div class="pixel-title danger">GAME OVER</div>
+      <div class="final-score">SCORE <span id="finalScore">00</span></div>
+      <button id="retryButton" class="start">再玩一次</button>
+    </div>
+  </section>
+  <div class="controls">
+    <button data-key="ArrowUp">▲</button>
+    <div><button data-key="ArrowLeft">◀</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button></div>
+    <div class="fullscreen-row"><button id="fullscreen">全螢幕</button></div>
+  </div>
+  <p id="status">吃完所有豆子即可過關</p>
+</main>
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+:root{--blue:#173cff;--yellow:#ffd92f;--bg:#050505}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:#fff;font-family:"Courier New",monospace}
+body{display:grid;place-items:center;overflow:auto}
+#app{width:min(100vw,620px);padding:12px 12px 24px;text-align:center}
+.hud{display:flex;justify-content:space-between;gap:12px;align-items:center;width:min(92vw,448px);margin:0 auto 8px;font-weight:900;font-size:clamp(11px,2.5vw,16px);letter-spacing:1px}
+.cabinet{position:relative;width:min(92vw,448px);margin:auto;aspect-ratio:448/576;background:#000}
+canvas{display:block;width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges;background:#000}
+.overlay{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;background:rgba(0,0,0,.70);z-index:5}
+.hidden{display:none!important}
+.pixel-title{font-size:clamp(25px,7vw,42px);font-weight:900;color:#fff;text-shadow:3px 3px 0 var(--blue);letter-spacing:3px}
+.pixel-title.danger{color:#ff4a4a;text-shadow:none}
+.start{margin:20px 0 8px;border:0;background:var(--yellow);color:#111;font:900 20px "Courier New",monospace;padding:10px 32px;cursor:pointer;box-shadow:0 4px 0 #9b7b00}
+.start:active{transform:translateY(3px);box-shadow:0 1px 0 #9b7b00}
+.overlay p{font-size:12px;margin:5px;color:#ddd}
+.hint{max-width:290px;line-height:1.5;color:#aaa!important}
+.final-score{margin-top:16px;font-size:18px}
+.controls{display:none;margin:14px auto 0;text-align:center;user-select:none}
+.controls button{width:52px;height:42px;margin:2px;border:1px solid #444;border-radius:6px;background:#171717;color:#fff;font:900 18px "Courier New",monospace;touch-action:manipulation}
+.controls .fullscreen-row button{width:auto;padding:0 18px;font-size:13px;margin-top:8px}
+#status{font-size:12px;color:#aaa;min-height:18px}
+@media(max-width:700px),(pointer:coarse){.controls{display:block}}
+:fullscreen #app{width:min(100vw,448px);padding-top:8px}
+:fullscreen body{background:#000}
